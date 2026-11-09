@@ -17,6 +17,11 @@ jobs:
       # This step will automatically clone the code of the current branch into the runner( for now main)
       - name: Checkout/Clone current repo code
         uses: actions/checkout@v7
+      # This will install python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14' 
       # This step will install the linting tool
       - name: Install Linter
         run: pip install ruff
